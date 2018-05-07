@@ -1,6 +1,6 @@
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
-import { checkPrikbord } from './check-prikbord';
+import {getPrikbordBerichten} from './prikbord-client';
 
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
@@ -9,12 +9,12 @@ import { checkPrikbord } from './check-prikbord';
 admin.initializeApp(functions.config().firebase);
 
 
-export const hello = functions.pubsub.topic('periodic-tick').onPublish(checkPrikbord);
+export const hello = functions.pubsub.topic('periodic-tick').onPublish(getPrikbordBerichten);
     // verzendTestbericht();
 
 
 // export const onreq = functions.https.onRequest((req, res) => {
-//     checkPrikbord()
+//     getPrikbordBerichten()
 //         .then(() => console.log('prikbord gecheckt'))
 //         .catch((err) => console.error(err));
 // });
