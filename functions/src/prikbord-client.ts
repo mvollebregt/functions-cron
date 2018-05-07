@@ -3,7 +3,7 @@ import {Bericht} from './bericht';
 import {extract, toParagraaf} from './generic';
 
 
-export async function getPrikbordBerichten() {
+export async function getPrikbordBerichten(): Promise<Bericht[]> {
     return extract('index.php/prikbord', 'div.easy_frame', mapToBericht);
 }
 

@@ -7,7 +7,7 @@ const baseUrl = 'http://www.loopgroepgroningen.nl/';
  * Haalt de informatie van de relatieve URL op, past er de CSS selector op toe, en mapt ieder resultaat naar een object
  * met behulp van de mapper.
  */
-export async function extract<T>(relativeUrl: string, selector: string, mapper: (elt: Element) => T) {
+export async function extract<T>(relativeUrl: string, selector: string, mapper: (elt: Element) => T) : Promise<T[]> {
     const response = await WebRequest.get(baseUrl + relativeUrl);
     const doc = new JSDOM(response.content).window.document;
     const elements = doc.querySelectorAll(selector);
