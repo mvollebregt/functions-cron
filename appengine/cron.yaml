@@ -1,4 +1,4 @@
 cron:
-#- description: Push a "tick" onto pubsub periodically
-#  url: /publish/periodic-tick
-#  schedule: every 1 minutes
+- description: Push a "tick" onto pubsub periodically
+  url: /publish/periodic-tick
+  schedule: every 5 minutes
