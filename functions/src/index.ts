@@ -12,7 +12,7 @@ const db = admin.firestore();
 
 export const periodicSync = functions.pubsub.topic('periodic-tick').onPublish(synchroniseerBerichten);
 export const callableSync = functions.https.onCall(synchroniseerBerichten);
-export const callableTest = functions.https.onCall(() => verzendNotificatie('algemeen', 'Testbericht', 'Dit is een eenmalig testbericht.'));
+// export const callableTest = functions.https.onCall(() => verzendNotificatie('algemeen', 'Testbericht', 'Dit is een eenmalig testbericht.'));
 
 const MILLIS_ONE_DAY = 1000 * 60 * 60 * 24;
 
